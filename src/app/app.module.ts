@@ -11,6 +11,8 @@ import { HeaderComponent } from './header/header.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
 import { BodyComponent } from './body/body.component';
 import { InfoFeedsComponent } from './info-feeds/info-feeds.component';
+import { ArticleComponent } from './article/article.component';
+import { TinymceComponent } from './tinymce/tinymce.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { InfoFeedsComponent } from './info-feeds/info-feeds.component';
     HeaderComponent,
     LeftNavComponent,
     BodyComponent,
-    InfoFeedsComponent
+    InfoFeedsComponent,
+    ArticleComponent,
+    TinymceComponent
   ],
   imports: [
     BrowserModule,
