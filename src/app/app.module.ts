@@ -2,9 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {InputTextModule ,ButtonModule,GrowlModule } from 'primeng/primeng';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
+import {InputTextModule ,ButtonModule,GrowlModule,PanelModule } from 'primeng/primeng';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
@@ -26,7 +27,9 @@ import { InfoFeedsComponent } from './info-feeds/info-feeds.component';
     HttpModule,
     InputTextModule,
     ButtonModule,
-    GrowlModule
+    GrowlModule,
+    PanelModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

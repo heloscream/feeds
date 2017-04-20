@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule }   from '@angular/forms' ;
 
-import {Message} from 'primeng/primeng';
+import {Message ,GrowlModule} from 'primeng/primeng';
 
 @Component({
   selector: 'app-body',
