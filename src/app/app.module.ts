@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CarouselModule} from 'primeng/primeng';
 
 
 import {InputTextModule ,ButtonModule,GrowlModule,PanelModule } from 'primeng/primeng';
@@ -14,6 +15,11 @@ import { InfoFeedsComponent } from './info-feeds/info-feeds.component';
 import { ArticleComponent } from './article/article.component';
 import { TinymceComponent } from './tinymce/tinymce.component';
 
+// services.ts
+
+import { InfoFeedsService } from './info-feeds/info-feeds.service';
+
+
 
 @NgModule({
   declarations: [
@@ -23,7 +29,7 @@ import { TinymceComponent } from './tinymce/tinymce.component';
     BodyComponent,
     InfoFeedsComponent,
     ArticleComponent,
-    TinymceComponent
+    TinymceComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,9 +39,10 @@ import { TinymceComponent } from './tinymce/tinymce.component';
     ButtonModule,
     GrowlModule,
     PanelModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CarouselModule
   ],
-  providers: [],
+  providers: [InfoFeedsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
