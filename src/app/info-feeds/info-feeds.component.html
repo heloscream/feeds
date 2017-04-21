@@ -1,24 +1,23 @@
 <div class="col-md-2 posi">
 
-  <p-panel header="Godfather I" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
-    <p-carousel [value]="feeds" numVisible="1" circular="circular" autoplayInterval="8000">
+  <!--<p-panel header="Godfather I" [toggleable]="true" [style]="{'margin-bottom':'20px'}">-->
+    <p-carousel [value]="feeds" numVisible="1" circular="circular" autoplayInterval="10000">
       <ng-template let-feed pTemplate="item">
-        <div class="ui-grid ui-grid-responsive">
-          <div class="ui-grid-row">
-            <div class="ui-grid-col-12"><img src="{{feed.urlToImage}}" style="width: 200px;height: 120px;"/></div>
-          </div>
-          <div class="ui-grid-row">
-            <!--<div class="ui-grid-col-6">Vin</div>-->
-            <p >{{feed.title}}</p>
-          </div>
-          <div class="ui-grid-row">
-            <!--<div class="ui-grid-col-6">Year</div>-->
-            <p >{{feed.description}}</p>
-          </div>
+        <!--<div class="ui-grid ui-grid-responsive">-->
+          <div class="ui-grid-col">
+          <img src="{{feed.urlToImage}}" style="width: 200px;height: 120px;"/>
+          <!--</div>-->
+          <!--<div class="ui-grid-row">-->
+            <p style="color:cornflowerblue">{{feed.title}}</p>
+            <hr>
+          <!--</div>-->
+          <!--<div class="ui-grid-row">-->
+            <b>{{feed.description}}</b>
+          <!--</div>-->
         </div>
       </ng-template>
     </p-carousel>
-  </p-panel>
+  <!--</p-panel>-->
   <p-panel header="Godfather I" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
       The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
       His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
