@@ -39,7 +39,7 @@ export class TinymceComponent implements ControlValueAccessor {
     ngAfterViewInit() {
         console.log(window.tinymce);
         window.tinymce.init({
-            width:600,
+            height:200,
             selector: 'textarea',
             plugins: ['link', 'paste','table'],
             menubar: false,
