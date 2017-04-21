@@ -1,0 +1,23 @@
+.side_nav{
+  display: block;
+  border:1px solid silver; 
+  padding: 0px;
+  border-radius:0px; 
+}
+.side_nav ul{
+    display: block;
+    padding: 0px;
+    border-radius:0px;
+}
+.side_nav ul>li{
+    display: block;
+    border-radius:0px;
+    border: none;
+    border-bottom: .5px  silver;
+}
+.side_nav ul>li>a{
+    display: block;
+    border-radius:0px;
+    border: none;
+    border-bottom: 1px solid  silver;
+}
