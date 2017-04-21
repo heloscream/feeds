@@ -1,0 +1,22 @@
+.article-container{
+   border: 1px solid lightgray;
+   border-radius:4px; 
+   padding-top:4%;
+}
+.artilce-label{
+  font-family: 'OpenSans-Bold',serif;
+  font-size: 25px;
+}
+.artilce-input input[type="text"]{
+      box-shadow: none;
+      width: 100%;
+      height: 35px;
+      border-radius: 0px;
+      border: none;
+      border-bottom: 1px solid silver;
+      float: left;
+
+}
+.inner-article{
+     margin:1% 
+}

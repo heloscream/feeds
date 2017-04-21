@@ -20,7 +20,8 @@ declare let tinymce: any;
             multi: true
         }
     ],
-    template: `<textarea id="{{elementId}}">{{initVal}}</textarea>`
+    template: `<textarea id="{{elementId}}">{{initVal}}</textarea>`,
+    styleUrls: ['./tinymce.css']
 })
 export class TinymceComponent implements ControlValueAccessor {
     elementId: String = Math.random().toString(36).substring(2);
