@@ -1,8 +1,7 @@
 .side_nav{
-  display: block;
-  border:1px solid silver; 
+  display: block; 
   padding: 0px;
-  border-radius:0px; 
+  border-radius:0px;
 }
 .side_nav ul{
     display: block;

@@ -1,43 +1,31 @@
-<div class="col-md-8">
-    <div class="ui-g">
+  <div class="ui-grid ui-grid-responsive">
       <div class="article-container">
         <!--for buttons-->
-       <div class="inner-article">
-        <app-article></app-article>
-        <div class="ui-g-12 ui-md-12 ui-sm-12 ui-lg-12"> 
-          <div class="ui-g">     
-            <span class="artilce-label ui-g-12 ui-lg-2 ui-md-2 ui-sm-2 " >Heading</span>
-              <div class="artilce-input ui-g-12 ui-lg-10 ui-md-10 ui-sm-10 ">
-                  <input id="in" type="text" size="30" pInputText  />  
-              </div>         
-            </div>
-            <div class="ui-g">     
-            <span class="artilce-label ui-g-12 ui-lg-2 ui-md-2 ui-sm-2 " >Edit Url</span>
-              <div class="artilce-input ui-g-12 ui-lg-10 ui-md-10 ui-sm-10 ">
-                  <input id="in" type="text" size="30" pInputText  />  
-              </div>         
-            </div>
-            <div class="ui-g">     
-            <span class="artilce-label ui-g-12 ui-lg-2 ui-md-2 ui-sm-2 " >Summary</span>
-              <div class="artilce-input ui-g-12 ui-lg-10 ui-md-10 ui-sm-10 ">
-                  <input id="in" type="text" size="30" pInputText  />  
-              </div>         
-            </div>
-          
-        </div>
-        <div class="ui-g-12 ui-md-12 ui-sm-12 ui-lg-12">    
-            <div class="container header-content">
-              <div class="row">
-              
-              
-                <!--for tinymce-->
-                <div class="container">
-                  <tinymce></tinymce>
-                </div>
+        <div class="inner-article">
+          <app-article></app-article>
+            <div class="ui-grid-row">     
+                <span class="artilce-label ui-grid-col-2" >Heading</span>
+                <div class="artilce-input ui-grid-col-8 ">
+                    <input id="in" type="text" size="30" pInputText  />  
+                </div>         
+              </div>
+              <div class="ui-grid-row">     
+                <span class="artilce-label ui-grid-col-2 " >Edit Url</span>
+                <div class="artilce-input ui-grid-col-8 ">
+                    <input id="in" type="text" size="30" pInputText  />  
+                </div>         
+              </div>
+              <div class="ui-grid-row">     
+                <span class="artilce-label ui-grid-col-2 " >Summary</span>
+                <div class="artilce-input ui-grid-col-8 ">
+                    <input id="in" type="text" size="30" pInputText  />  
+                </div>         
+              </div>     
+            <div class="ui-grid-row">
+                    <div class="">
+                      <tinymce></tinymce>
+                    </div>
               </div>
             </div>
-          </div>
         </div>
-      </div>
-   </div>
-</div>
+    </div>
