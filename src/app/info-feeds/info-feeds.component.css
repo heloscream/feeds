@@ -1,3 +1,8 @@
 .sebm-google-map-container {
   height: 300px;
 }
+
+.newsfeeds{
+  overflow:hidden; overflow-y:scroll;
+  height: 200px;
+}

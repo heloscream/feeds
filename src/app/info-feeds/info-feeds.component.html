@@ -1,23 +1,14 @@
 
-  <!--<p-panel [toggleable]="true" [style]="{'margin-bottom':'20px'}">-->
-  <p-carousel [value]="feeds" numVisible="1" circular=false autoplayInterval="10000">
-    <ng-template let-feed pTemplate="item">
-      <!--<div class="ui-grid ui-grid-responsive">-->
-      <!--<div class="ui-grid">-->
-       <img src="{{feed.urlToImage}}" style="width: 220px;height: 120px;" />
-        <!--</div>-->
-        <!--<div class="ui-grid-row">-->
-         <a target="_blank" href="{{feed.url}}"><p style="color:cornflowerblue">{{feed.title}}</p></a>
-        <!--<hr>-->
-        <!--</div>-->
-        <!--<div class="ui-grid-row">-->
-        <b>{{feed.description}}</b>
-        <!--</div>-->
-      <!--</div>-->
-    </ng-template>
-  </p-carousel>
-  <!--</p-panel>-->
-  <br>
+  <p-panel header = "News feeds" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+    <div  class="newsfeeds">
+    <li *ngFor="let feed of feeds" style="list-style: none">
+      <img src="{{feed.urlToImage}}" style="width: 181px; height: 103px;">
+      <a style="color:cornflowerblue">{{feed.title}}</a>
+      <p>{{feed.description}}</p>
+      </li>
+      </div>
+  </p-panel>
+  <!--<br>-->
   <!--<p-panel  [toggleable]="true" [style]="{'margin-bottom':'20px'}">-->
     <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false">
       <sebm-google-map-marker *ngFor="let m of earthquakes; let i = index"  [latitude]="m.lat"
@@ -25,4 +16,6 @@
       </sebm-google-map-marker>
     </sebm-google-map>
   <!--</p-panel>-->
+
+
 
