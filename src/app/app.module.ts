@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CarouselModule} from 'primeng/primeng';
+import { AgmCoreModule } from 'angular2-google-maps/core';
+
 
 
 import {InputTextModule ,ButtonModule,GrowlModule,PanelModule } from 'primeng/primeng';
@@ -40,7 +42,10 @@ import { InfoFeedsService } from './info-feeds/info-feeds.service';
     GrowlModule,
     PanelModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+     AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA9IUN-rUyNHLK2yiQaRfVahRzCBvdIQiI'
+    })
   ],
   providers: [InfoFeedsService],
   bootstrap: [AppComponent]
