@@ -14,10 +14,15 @@ import { BodyComponent } from './body/body.component';
 import { InfoFeedsComponent } from './info-feeds/info-feeds.component';
 import { ArticleComponent } from './article/article.component';
 import { TinymceComponent } from './tinymce/tinymce.component';
-
+import { routes } from './app.router';
 // services.ts
 
 import { InfoFeedsService } from './info-feeds/info-feeds.service';
+import { AnalysisComponent } from './navigate/analysis/analysis.component';
+import { VersionComponent } from './navigate/version/version.component';
+import { SocialComponent } from './navigate/social/social.component';
+import { SeoComponent } from './navigate/seo/seo.component';
+
 
 
 
@@ -30,6 +35,10 @@ import { InfoFeedsService } from './info-feeds/info-feeds.service';
     InfoFeedsComponent,
     ArticleComponent,
     TinymceComponent,
+    AnalysisComponent,
+    VersionComponent,
+    SocialComponent,
+    SeoComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +49,8 @@ import { InfoFeedsService } from './info-feeds/info-feeds.service';
     GrowlModule,
     PanelModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    routes
   ],
   providers: [InfoFeedsService],
   bootstrap: [AppComponent]

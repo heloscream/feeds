@@ -28,6 +28,9 @@
           </div><!--/.nav-collapse -->
         </div>
       </nav>
+
+
+
     <div class="ui-grid ui-grid-responsive">
       <div class="ui-grid-row">
           <!-- left-nav -->
@@ -35,7 +38,8 @@
             <app-left-nav></app-left-nav>
           </div>
           <div class="ui-grid-col-8">
-            <app-body></app-body>
+            <router-outlet></router-outlet>  
+            <!--<app-body></app-body>-->
           </div>
           <!--  info-feeds -->
         <div class="ui-grid-col-2">
@@ -43,3 +47,6 @@
         </div>    
       </div> <!-- /container -->
     </div>
+     
+             
+    
