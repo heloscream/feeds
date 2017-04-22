@@ -1,13 +1,16 @@
 .header-content {
    width:100%;
 }
+
 .navbar{
     height: 56px;
     min-height: 56px;
     padding: 0;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
 }
-.side_nav_border{
+
+.nav_main{
+  margin-left:1%;
   margin-top: -1%;
   border-left: 1px solid silver;
   border-right: 1px solid silver;

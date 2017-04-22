@@ -1,5 +1,36 @@
-<div class="pull-left">
-  <button pButton type="button" (click)="count()" label="Save draft"></button>
-  <button pButton class="ui-button-info" type="button" (click)="count()" icon="fa-check" label="Review"></button>
-  <button pButton class="ui-button-success" type="button" (click)="count()" icon="fa-check" iconPos="right" label="Publish"></button>        
-</div>
+  <div class="ui-grid ui-grid-responsive">
+      <div class="article_container">
+        <!--for buttons-->
+        <div class="inner_article"> 
+          <div class=" ui-grid-row btn_pos">
+            <button pButton type="button" (click)="count()" label="Save draft"></button>
+            <button pButton class="ui-button-success" type="button" (click)="count()" icon="fa-check" iconPos="right" label="Publish"></button>        
+            <button pButton class="ui-button-info" type="button" (click)="count()" icon="fa-check" label="Review"></button>
+          </div>
+          <div class="ui-grid-col-10">
+                  <div class="ui-grid-row">     
+                      <span class="artilce_label ui-grid-col-2" >Heading</span>
+                      <div class="artilce_input ui-grid-col-10 ">
+                          <input id="in" type="text" size="30" pInputText  />  
+                      </div>         
+                    </div>
+                    <div class="ui-grid-row">     
+                      <span class="artilce_label ui-grid-col-2 " >Edit Url</span>
+                      <div class="artilce_input ui-grid-col-10 ">
+                          <input id="in" type="text" size="30" pInputText  />  
+                      </div>         
+                    </div>
+                    <div class="ui-grid-row">     
+                      <span class="artilce_label ui-grid-col-2 " >Summary</span>
+                      <div class="artilce_input ui-grid-col-10 ">
+                          <input id="in" type="text" size="30" pInputText  />  
+                      </div>         
+                    </div>     
+                  <div class="ui-grid-row">
+                            <!--<app-editor></app-editor>-->
+                            <app-ckedit></app-ckedit>
+                    </div>
+             </div>
+            </div>
+        </div>
+    </div>

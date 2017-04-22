@@ -12,10 +12,9 @@ import {InputTextModule ,ButtonModule,GrowlModule,PanelModule } from 'primeng/pr
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
-import { BodyComponent } from './body/body.component';
+
 import { InfoFeedsComponent } from './info-feeds/info-feeds.component';
 import { ArticleComponent } from './article/article.component';
-import { TinymceComponent } from './tinymce/tinymce.component';
 import { routes } from './app.router';
 // services.ts
 
@@ -24,8 +23,8 @@ import { AnalysisComponent } from './navigate/analysis/analysis.component';
 import { VersionComponent } from './navigate/version/version.component';
 import { SocialComponent } from './navigate/social/social.component';
 import { SeoComponent } from './navigate/seo/seo.component';
-
-
+import { CkeditComponent } from './ckedit/ckedit.component';
+import { CKEditorModule } from 'ng2-ckeditor';
 
 
 @NgModule({
@@ -33,14 +32,13 @@ import { SeoComponent } from './navigate/seo/seo.component';
     AppComponent,
     HeaderComponent,
     LeftNavComponent,
-    BodyComponent,
     InfoFeedsComponent,
     ArticleComponent,
-    TinymceComponent,
     AnalysisComponent,
     VersionComponent,
     SocialComponent,
-    SeoComponent
+    SeoComponent,
+    CkeditComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +50,7 @@ import { SeoComponent } from './navigate/seo/seo.component';
     PanelModule,
     BrowserAnimationsModule,
     CarouselModule,
-
+    CKEditorModule,
     routes,
      AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA9IUN-rUyNHLK2yiQaRfVahRzCBvdIQiI'

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule }   from '@angular/forms' ;
-import { TinymceComponent } from '../tinymce/tinymce.component';
+import { FormsModule } from '@angular/forms' ;
 
 
 @Component({
@@ -10,10 +9,5 @@ import { TinymceComponent } from '../tinymce/tinymce.component';
 })
 export class ArticleComponent  {
 
-  clicks: number = 0;
-
-    count() {
-        this.clicks++;
-    }
 
 }

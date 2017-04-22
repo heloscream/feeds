@@ -1,10 +1,9 @@
 import { ModuleWithProviders} from '@angular/core';
-import { Routes , RouterModule }  from '@angular/router';
+import { Routes , RouterModule } from '@angular/router';
 
 
-import { AppComponent}  from './app.component';
-
-import { BodyComponent } from './body/body.component';
+import { AppComponent} from './app.component';
+import { ArticleComponent } from './article/article.component';
 import { AnalysisComponent } from './navigate/analysis/analysis.component';
 import { VersionComponent } from './navigate/version/version.component';
 import { SocialComponent } from './navigate/social/social.component';
@@ -12,8 +11,8 @@ import { SeoComponent } from './navigate/seo/seo.component';
 
 
  const router: Routes = [
-     {path: '' , redirectTo: 'body', pathMatch: 'full'},
-     {path: 'body' , component: BodyComponent},
+     {path: '' , redirectTo: 'article', pathMatch: 'full'},
+     {path: 'article' , component: ArticleComponent},
      {path: 'social', component: SocialComponent},
      {path: 'version', component: VersionComponent },
      {path: 'seo', component: SeoComponent },

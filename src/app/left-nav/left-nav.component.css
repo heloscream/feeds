@@ -1,11 +1,10 @@
 .side_nav{
   display: block; 
-  padding: 0px;
   border-radius:0px;
+  
 }
 .side_nav ul{
     display: block;
-    padding: 0px;
     border-radius:0px;
 }
 .side_nav ul>li{
@@ -14,7 +13,8 @@
     border: none;
     border-bottom: .5px  silver;
 }
-.side_nav ul>li>a{
+.side_nav ul>li>a , .side_nav ul>li>a:hover{
+    padding: 4%;
     display: block;
     border-radius:0px;
     border: none;
