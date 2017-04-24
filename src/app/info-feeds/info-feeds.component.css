@@ -6,3 +6,6 @@
   overflow:hidden; overflow-y:scroll;
   height: 200px;
 }
+.newsimage{
+  max-width: 100%
+}
