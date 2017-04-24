@@ -2,20 +2,35 @@
   <p-panel header = "News Feeds" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
     <div  class="newsfeeds">
     <li *ngFor="let feed of feeds" style="list-style: none">
-      <img src="{{feed.urlToImage}}" class="newsimage">
+      <img src="{{feed.thumbnail}}" class="newsimage">
       <a style="color:cornflowerblue">{{feed.title}}</a>
-      <p>{{feed.description}}</p>
+      <p>{{feed.content}}</p>
       </li>
       </div>
   </p-panel>
   <!--<br>-->
   <p-panel  header="Latest Earthquakes"[toggleable]="true" [style]="{'margin-bottom':'20px'}">
+     <div  class="earthquakefeeds">
     <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false">
       <sebm-google-map-marker *ngFor="let m of earthquakes; let i = index"  [latitude]="m.lat"
         [longitude]="m.lon" [label]="m.magnitude">
       </sebm-google-map-marker>
     </sebm-google-map>
+     </div>
   </p-panel>
+
+  <p-panel header = "Twitter Feeds" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+    <div  class="twitterfeeds">
+    <li *ngFor="let feed of twitfeeds" style="list-style: none">
+      <!--<img src="{{feed.thumbnail}}" class="newsimage">-->
+      <!--<a style="color:cornflowerblue">{{feed.title}}</a>-->
+      <!--<p>{{feed.contentSnippet}}</p>-->
+      <p [innerHtml]="feed.content"></p>
+      </li>
+      </div>
+  </p-panel>
+
+  
 
 
 

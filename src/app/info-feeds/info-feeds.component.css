@@ -9,3 +9,12 @@
 .newsimage{
   max-width: 100%
 }
+
+.twitterfeeds{
+  overflow:hidden; overflow-y:scroll;
+  height: 200px;
+}
+.earthquakefeeds{
+     height: 106px;
+  overflow:hidden;
+}

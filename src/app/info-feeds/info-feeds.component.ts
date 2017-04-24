@@ -11,11 +11,16 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 export class InfoFeedsComponent implements OnInit {
 public feeds: any;
 public earthquakes : any;
+public twitfeeds:any;
+ 
   // google maps zoom level
     zoom: number = 2;
   // initial center position for the map
-  lat: number = 37.090240;
-  lng: number = 80.156250;
+  
+
+
+  lat: number = -19.645929;
+  lng: number =  152.696876;
   constructor(private feedsService: InfoFeedsService) { 
     // recall api services
   
@@ -23,6 +28,11 @@ public earthquakes : any;
        this.getnewsfeeds();
        this.geteqsreport();
     }, 180000);
+
+
+    setTimeout(() => {
+       this.gettwitfeeds();
+    }, 60000);
   }
 
    // on load services
@@ -30,12 +40,22 @@ public earthquakes : any;
   ngOnInit() {
     this.getnewsfeeds();
     this.geteqsreport();
+    this.gettwitfeeds();
   }
 
-  // api services
+  // api services using thrid party
+  // getnewsfeeds() {
+  //   this.feedsService.getfeed().then((data: any) => {
+  //     this.feeds = data["articles"];
+  //   });
+  // }
+
+// using rss feeds
   getnewsfeeds() {
     this.feedsService.getfeed().then((data: any) => {
-      this.feeds = data["articles"];
+      if(data["responseStatus"]== "200"){
+      this.feeds = data["responseData"]["feed"]["entries"]
+      }
     });
   }
 
@@ -49,6 +69,16 @@ public earthquakes : any;
         this.earthquakes[i].lon = +data["earthquakes"][i].lon;
       }
     })
+  }
+
+  gettwitfeeds() {
+    this.feedsService.gettwitfeeds().then((data: any) => {
+      console.log(data["responseStatus"])
+      if(data["responseStatus"]== "200"){
+      this.twitfeeds = data["responseData"]["feed"]["entries"];
+      // console.log(JSON.stringify(this.twitfeeds.content) )
+      }
+    });
   }
 
 }
