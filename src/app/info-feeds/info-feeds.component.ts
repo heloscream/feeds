@@ -12,6 +12,7 @@ export class InfoFeedsComponent implements OnInit {
 public feeds: any;
 public earthquakes : any;
 public twitfeeds:any;
+public sensex: any;
  
   // google maps zoom level
     zoom: number = 2;
@@ -27,6 +28,7 @@ public twitfeeds:any;
     setTimeout(() => {
        this.getnewsfeeds();
        this.geteqsreport();
+       this.getsensexreport();
     }, 180000);
 
 
@@ -41,6 +43,7 @@ public twitfeeds:any;
     this.getnewsfeeds();
     this.geteqsreport();
     this.gettwitfeeds();
+    this.getsensexreport();
   }
 
   // api services using thrid party
@@ -77,6 +80,17 @@ public twitfeeds:any;
       if(data["responseStatus"]== "200"){
       this.twitfeeds = data["responseData"]["feed"]["entries"];
       // console.log(JSON.stringify(this.twitfeeds.content) )
+      }
+    });
+  }
+
+  getsensexreport(){
+    this.feedsService.getsensex().then((data: any) => {
+       console.log(data["responseStatus"])
+      if(data["responseStatus"] == "200"){
+        console.log(data["responseData"]["feed"])
+      this.sensex = data["responseData"]["feed"]["entries"];
+     
       }
     });
   }

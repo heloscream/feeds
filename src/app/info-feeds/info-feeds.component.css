@@ -18,3 +18,8 @@
      height: 106px;
   overflow:hidden;
 }
+.sensexreports{
+  height: 200px;
+  overflow:hidden; overflow-y:scroll;
+
+}
