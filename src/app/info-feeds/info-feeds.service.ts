@@ -7,7 +7,7 @@ export class InfoFeedsService {
     private newsapi = "http://kre-feed_dev.kreatio.info/?q=http://feeds.bbci.co.uk/news/world/rss.xml"
     private earthquakeapi = "http://www.seismi.org/api/eqs?limit=10&min_magnitude=6";
     private twitterfeeds = "http://kre-feed.mailfixx.com/?q=https://twitrss.me/twitter_user_to_rss/?user=timesofindia"
-    private sensexapi: "http://kre-feed_dev.kreatio.info/?q=http://www.bseindia.com/data/xml/notices.xml";
+    private sensexapi = "http://kre-feed_dev.kreatio.info/?q=http://www.bseindia.com/data/xml/notices.xml";
     
     constructor(private http: Http) {
         

@@ -9,35 +9,22 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
   styleUrls: ['./info-feeds.component.css']
 })
 export class InfoFeedsComponent implements OnInit {
-public feeds: any;
-public earthquakes : any;
-public twitfeeds:any;
-public sensex: any;
- 
+  public feeds: any;
+  public earthquakes: any;
+  public twitfeeds: any;
+  public sensex: any;
+
   // google maps zoom level
-    zoom: number = 2;
+  zoom: number = 2;
   // initial center position for the map
-  
+
 
 
   lat: number = -19.645929;
-  lng: number =  152.696876;
-  constructor(private feedsService: InfoFeedsService) { 
-    // recall api services
-  
-    setTimeout(() => {
-       this.getnewsfeeds();
-       this.geteqsreport();
-       this.getsensexreport();
-    }, 180000);
+  lng: number = 152.696876;
+  constructor(private feedsService: InfoFeedsService) { }
 
-
-    setTimeout(() => {
-       this.gettwitfeeds();
-    }, 60000);
-  }
-
-   // on load services
+  // on load services
 
   ngOnInit() {
     this.getnewsfeeds();
@@ -46,52 +33,52 @@ public sensex: any;
     this.getsensexreport();
   }
 
-  // api services using thrid party
-  // getnewsfeeds() {
-  //   this.feedsService.getfeed().then((data: any) => {
-  //     this.feeds = data["articles"];
-  //   });
-  // }
-
-// using rss feeds
   getnewsfeeds() {
     this.feedsService.getfeed().then((data: any) => {
-      if(data["responseStatus"]== "200"){
-      this.feeds = data["responseData"]["feed"]["entries"]
+      if (data["responseStatus"] == "200") {
+        this.feeds = data["responseData"]["feed"]["entries"]
       }
+      setTimeout(() => {
+        this.geteqsreport();
+      }, 600000);
     });
   }
 
-  //  earthquake api
 
-  geteqsreport(){
-    this.feedsService.geteqs().then((data:any)=> {
-      this.earthquakes =data["earthquakes"]
-      for(var i=0;i<=data["earthquakes"].length;i++){
+  geteqsreport() {
+    this.feedsService.geteqs().then((data: any) => {
+      this.earthquakes = data["earthquakes"]
+      for (var i = 0; i < data["earthquakes"].length; i++) {
         this.earthquakes[i].lat = +data["earthquakes"][i].lat;
         this.earthquakes[i].lon = +data["earthquakes"][i].lon;
       }
+      setTimeout(() => {
+        this.geteqsreport();
+      }, 180000);
+
     })
   }
 
   gettwitfeeds() {
     this.feedsService.gettwitfeeds().then((data: any) => {
-      console.log(data["responseStatus"])
-      if(data["responseStatus"]== "200"){
-      this.twitfeeds = data["responseData"]["feed"]["entries"];
-      // console.log(JSON.stringify(this.twitfeeds.content) )
+      if (data["responseStatus"] == "200") {
+        this.twitfeeds = data["responseData"]["feed"]["entries"];
+        setTimeout(() => {
+          this.gettwitfeeds();
+        }, 6000);
       }
     });
   }
 
-  getsensexreport(){
+  getsensexreport() {
     this.feedsService.getsensex().then((data: any) => {
-       console.log(data["responseStatus"])
-      if(data["responseStatus"] == "200"){
-        console.log(data["responseData"]["feed"])
-      this.sensex = data["responseData"]["feed"]["entries"];
-     
+      if (data["responseStatus"] == "200") {
+        this.sensex = data["responseData"]["feed"]["entries"];
+
       }
+      setTimeout(() => {
+        this.geteqsreport();
+      }, 80000);
     });
   }
 
