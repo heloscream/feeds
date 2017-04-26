@@ -1,0 +1,13 @@
+<p-panel *ngFor="let m of articles" header="News Feeds" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+    <!--<div  class="newsfeeds">-->
+    <!--<span >-->
+    <!--<h2 *ngIf=!feeds>NO FEEDS</h2>-->
+    <h1>{{m.title}}</h1>
+    <a href="atricle.url">
+        <h2 style="color:cornflowerblue">{{m.url}}</h2>
+    </a>
+    <p>{{m.summary}}</p>
+    <div>{{m.description}} </div>
+    <!--</span>-->
+    <!--</div>-->
+</p-panel>

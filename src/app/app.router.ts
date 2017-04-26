@@ -8,7 +8,7 @@ import { AnalysisComponent } from './navigate/analysis/analysis.component';
 import { VersionComponent } from './navigate/version/version.component';
 import { SocialComponent } from './navigate/social/social.component';
 import { SeoComponent } from './navigate/seo/seo.component';
-
+import {PublishedComponent} from './navigate/published/published.component'
 
  const router: Routes = [
      {path: '' , redirectTo: 'article', pathMatch: 'full'},
@@ -16,7 +16,8 @@ import { SeoComponent } from './navigate/seo/seo.component';
      {path: 'social', component: SocialComponent},
      {path: 'version', component: VersionComponent },
      {path: 'seo', component: SeoComponent },
-     {path: 'analyis', component: AnalysisComponent}     
+     {path: 'analyis', component: AnalysisComponent},
+     {path: 'published',component:PublishedComponent}     
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);

@@ -1,6 +1,7 @@
 
   <p-panel header = "News Feeds" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
     <div  class="newsfeeds">
+    <h2 *ngIf=!feeds>NO FEEDS</h2>
     <li *ngFor="let feed of feeds" style="list-style: none">
       <img src="{{feed.thumbnail}}" class="newsimage">
       <a style="color:cornflowerblue">{{feed.title}}</a>
@@ -21,10 +22,8 @@
 
   <p-panel header = "Twitter Feeds" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
     <div  class="twitterfeeds">
+    <h2 *ngIf=!twitfeeds>NO FEEDS</h2>
     <li *ngFor="let feed of twitfeeds" style="list-style: none">
-      <!--<img src="{{feed.thumbnail}}" class="newsimage">-->
-      <!--<a style="color:cornflowerblue">{{feed.title}}</a>-->
-      <!--<p>{{feed.contentSnippet}}</p>-->
       <p [innerHtml]="feed.content"></p>
       </li>
       </div>
@@ -32,6 +31,7 @@
 
   <p-panel header = "Sensex reports" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
     <div  class="sensexreports">
+    <h2 *ngIf=!sensex>NO FEEDS</h2>
     <li *ngFor="let sensex of sensex" style="list-style: none">
       <p>{{sensex.title}}</p>
       <a style="color:cornflowerblue">{{sensex.link}}</a>

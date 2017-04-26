@@ -6,7 +6,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 @Component({
   selector: 'app-info-feeds',
   templateUrl: './info-feeds.component.html',
-  styleUrls: ['./info-feeds.component.css']
+  styleUrls: ['./info-feeds.component.css'],
+  providers: [InfoFeedsService]
 })
 export class InfoFeedsComponent implements OnInit {
   public feeds: any;
@@ -39,7 +40,7 @@ export class InfoFeedsComponent implements OnInit {
         this.feeds = data["responseData"]["feed"]["entries"]
       }
       setTimeout(() => {
-        this.geteqsreport();
+        this.getnewsfeeds();
       }, 600000);
     });
   }
@@ -66,6 +67,8 @@ export class InfoFeedsComponent implements OnInit {
         setTimeout(() => {
           this.gettwitfeeds();
         }, 6000);
+      }else{
+        
       }
     });
   }
@@ -74,12 +77,14 @@ export class InfoFeedsComponent implements OnInit {
     this.feedsService.getsensex().then((data: any) => {
       if (data["responseStatus"] == "200") {
         this.sensex = data["responseData"]["feed"]["entries"];
-
+      }else{
+        this.sensex = '';
       }
       setTimeout(() => {
-        this.geteqsreport();
+        this.getsensexreport();
       }, 80000);
     });
   }
+  
 
 }
