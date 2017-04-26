@@ -1,22 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ArticleComponent} from '../article/article.component'
 
  @Component({
   selector: 'app-ckedit',
-  template: `
-             <ckeditor [(ngModel)]="content" debounce="500">
-      <p>Hello <strong>world</strong></p>
-    </ckeditor>
-    <div [innerHTML]="content"></div>
-               `,
+  templateUrl: './ckedit.component.html',
   styleUrls: ['./ckedit.component.css']
 })
 export class CkeditComponent implements OnInit {
 
-  constructor() {
+  constructor(private ArticleComponent:ArticleComponent) {
    }
 
   ngOnInit() {
+  }
+
+  onChange(data){
+    this.ArticleComponent.get(data);
   }
 
 }

@@ -16,6 +16,7 @@ import { ArticleComponent } from './article/article.component';
 import { routes } from './app.router';
 // services.ts
 import { InfoFeedsService } from './info-feeds/info-feeds.service';
+import { ArticleService } from './article/article.service';
 import { AnalysisComponent } from './navigate/analysis/analysis.component';
 import { VersionComponent } from './navigate/version/version.component';
 import { SocialComponent } from './navigate/social/social.component';
@@ -55,7 +56,7 @@ import { DisplayArticleComponent } from './display-article/display-article.compo
       apiKey: 'AIzaSyA9IUN-rUyNHLK2yiQaRfVahRzCBvdIQiI'
     })
   ],
-  providers: [InfoFeedsService],
+  providers: [InfoFeedsService,ArticleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
