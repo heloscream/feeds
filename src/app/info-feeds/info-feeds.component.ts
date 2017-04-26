@@ -19,8 +19,6 @@ export class InfoFeedsComponent implements OnInit {
   zoom: number = 2;
   // initial center position for the map
 
-
-
   lat: number = -19.645929;
   lng: number = 152.696876;
   constructor(private feedsService: InfoFeedsService) { }
@@ -33,7 +31,6 @@ export class InfoFeedsComponent implements OnInit {
     this.gettwitfeeds();
     this.getsensexreport();
   }
-
   getnewsfeeds() {
     this.feedsService.getfeed().then((data: any) => {
       if (data["responseStatus"] == "200") {
@@ -45,7 +42,6 @@ export class InfoFeedsComponent implements OnInit {
     });
   }
 
-
   geteqsreport() {
     this.feedsService.geteqs().then((data: any) => {
       this.earthquakes = data["earthquakes"]
@@ -55,7 +51,7 @@ export class InfoFeedsComponent implements OnInit {
       }
       setTimeout(() => {
         this.geteqsreport();
-      }, 180000);
+      }, 600000);
 
     })
   }

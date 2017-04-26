@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleComponent} from '../article/article.component'
 
-
  @Component({
   selector: 'app-ckedit',
   templateUrl: './ckedit.component.html',
@@ -10,6 +9,9 @@ import { ArticleComponent} from '../article/article.component'
 export class CkeditComponent implements OnInit {
 
   constructor(private articleservice:ArticleComponent) {
+// =======
+//   constructor(private ArticleComponent:ArticleComponent) {
+// >>>>>>> 92cc4636ee5b777a7e8c72c085eafdcade84a5c0
    }
 
   ngOnInit() {
@@ -20,5 +22,9 @@ export class CkeditComponent implements OnInit {
     this.articleservice.getdata(content)
 
   }
+
+  // onChange(data){
+  //   this.ArticleComponent.get(data);
+  // }
 
 }

@@ -10,6 +10,7 @@ import { SocialComponent } from './navigate/social/social.component';
 import { SeoComponent } from './navigate/seo/seo.component';
 import {PublishedComponent} from './navigate/published/published.component'
 
+
  const router: Routes = [
      {path: '' , redirectTo: 'article', pathMatch: 'full'},
      {path: 'article' , component: ArticleComponent},

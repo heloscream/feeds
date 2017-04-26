@@ -27,18 +27,16 @@
               <input id="in" type="text" size="30" pInputText [(ngModel)]="article.summary" name="details" />
             </div>
           </div>
-
           <div class="ui-grid-row">
             <!--<app-editor></app-editor>-->
             <app-ckedit> </app-ckedit>
-           
+
           </div>
         </div>
       </form>
     </div>
 
   </div>
-</div>
 
 <p-dialog header="Aritcle Preview" [(visible)]="display" modal="modal" width="300" responsive="true">
   <h1>{{article.title}}</h1>
