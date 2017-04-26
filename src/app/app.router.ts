@@ -8,6 +8,7 @@ import { AnalysisComponent } from './navigate/analysis/analysis.component';
 import { VersionComponent } from './navigate/version/version.component';
 import { SocialComponent } from './navigate/social/social.component';
 import { SeoComponent } from './navigate/seo/seo.component';
+import { DisplayArticleComponent } from './display-article/display-article.component';
 
 
  const router: Routes = [
@@ -16,7 +17,8 @@ import { SeoComponent } from './navigate/seo/seo.component';
      {path: 'social', component: SocialComponent},
      {path: 'version', component: VersionComponent },
      {path: 'seo', component: SeoComponent },
-     {path: 'analyis', component: AnalysisComponent}     
+     {path: 'analyis', component: AnalysisComponent},
+     {path: 'display-article', component: DisplayArticleComponent}
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);

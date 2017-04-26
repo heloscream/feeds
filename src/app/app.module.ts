@@ -1,12 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule ,JsonpModule} from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {CarouselModule} from 'primeng/primeng';
 import { AgmCoreModule } from 'angular2-google-maps/core';
-
-
+import {CarouselModule} from 'primeng/primeng';
 
 import {InputTextModule ,ButtonModule,GrowlModule,PanelModule } from 'primeng/primeng';
 import { AppComponent } from './app.component';
@@ -17,7 +15,6 @@ import { InfoFeedsComponent } from './info-feeds/info-feeds.component';
 import { ArticleComponent } from './article/article.component';
 import { routes } from './app.router';
 // services.ts
-
 import { InfoFeedsService } from './info-feeds/info-feeds.service';
 import { AnalysisComponent } from './navigate/analysis/analysis.component';
 import { VersionComponent } from './navigate/version/version.component';
@@ -25,7 +22,7 @@ import { SocialComponent } from './navigate/social/social.component';
 import { SeoComponent } from './navigate/seo/seo.component';
 import { CkeditComponent } from './ckedit/ckedit.component';
 import { CKEditorModule } from 'ng2-ckeditor';
-
+import { DisplayArticleComponent } from './display-article/display-article.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +35,8 @@ import { CKEditorModule } from 'ng2-ckeditor';
     VersionComponent,
     SocialComponent,
     SeoComponent,
-    CkeditComponent
+    CkeditComponent,
+    DisplayArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +50,7 @@ import { CKEditorModule } from 'ng2-ckeditor';
     CarouselModule,
     CKEditorModule,
     routes,
+    JsonpModule,
      AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA9IUN-rUyNHLK2yiQaRfVahRzCBvdIQiI'
     })
