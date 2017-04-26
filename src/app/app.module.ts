@@ -19,12 +19,14 @@ import { routes } from './app.router';
 // services.ts
 
 import { InfoFeedsService } from './info-feeds/info-feeds.service';
+import { ArticleService } from './article/article.service';
 import { AnalysisComponent } from './navigate/analysis/analysis.component';
 import { VersionComponent } from './navigate/version/version.component';
 import { SocialComponent } from './navigate/social/social.component';
 import { SeoComponent } from './navigate/seo/seo.component';
 import { CkeditComponent } from './ckedit/ckedit.component';
 import { CKEditorModule } from 'ng2-ckeditor';
+import { TinymceModule } from './tinymce/tinymce.module';
 
 
 @NgModule({
@@ -51,12 +53,13 @@ import { CKEditorModule } from 'ng2-ckeditor';
     BrowserAnimationsModule,
     CarouselModule,
     CKEditorModule,
+    TinymceModule,
     routes,
      AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA9IUN-rUyNHLK2yiQaRfVahRzCBvdIQiI'
     })
   ],
-  providers: [InfoFeedsService],
+  providers: [InfoFeedsService,ArticleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
