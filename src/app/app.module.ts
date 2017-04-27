@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DialogModule} from 'primeng/primeng';
+import {DialogModule,DataGridModule} from 'primeng/primeng';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import {CarouselModule} from 'primeng/primeng';
 
@@ -50,6 +50,7 @@ import {PublishedComponent} from './navigate/published/published.component'
     CarouselModule,
     CKEditorModule,
     DialogModule,
+    DataGridModule,
     routes,
     JsonpModule,
      AgmCoreModule.forRoot({

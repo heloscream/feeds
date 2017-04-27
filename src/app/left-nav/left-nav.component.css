@@ -20,3 +20,5 @@
     border: none;
     border-bottom: 1px solid  silver;
 }
+
+.router-link-active { background-color: blue; }
