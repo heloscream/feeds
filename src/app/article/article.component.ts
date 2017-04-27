@@ -16,8 +16,8 @@ import { ArticleService } from './article.service';
 export class ArticleComponent implements OnInit {
   errorMgs :string;
   articles: Article[];
-
-  // display: boolean =false;
+  display: boolean =false;
+  
   constructor(private articleservice :ArticleService ){}
      ngOnInit() { this.getArticle(); }
 
@@ -28,16 +28,13 @@ export class ArticleComponent implements OnInit {
             error =>  this.errorMgs = <any>error
       }
 
-  // showDialog(){
-  //   this.display = true;
-  // }
+  showDialog(){
+    this.display = true;
+  }
 
-  // onSubmit(title:string, url:string, description:string, content:string){
-  //   console.log("This   s"+title);
-  // }
-  addArticle(title:string, url:string, description:string, content:string){
+  ngSubmit(title:string, url:string, summary:string, description:string){
     if(!title){return;}
-    this.articleservice.create_article(title,url,description,content).subscribe(
+    this.articleservice.create_article(title,url,summary,description).subscribe(
        article=> this.articles.push(article),
       error => this.errorMgs = <any>error
      );

@@ -2,11 +2,11 @@
   <div class="article_container">
     <!--for buttons-->
     <div class="inner_article">
-      <form (ngSubmit)="onSubmit(article)" #article="ngForm">
+      <form  #article="ngForm">
         <div class=" ui-grid-row btn_pos">
           <button pButton type="button" (click)="count()" label="Save draft"></button>
-          <button pButton class="ui-button-success" type="submit"  icon="fa-check" iconPos="right" label="Publish" (click) ="addArticle(title.value,url.value,details.value ,content.value)"></button>
-          <button pButton class="ui-button-info" type="button" (click)="showDialog()"  icon="fa-check" label="Review"></button>
+          <button pButton class="ui-button-success" type="submit" icon="fa-check"  label="Publish" (click)="ngSubmit(article.title,article.url,article.summary,article.description)"></button>
+          <button pButton class="ui-button-info" type="button" (click)="showDialog()" icon="fa-check" label="Review"></button>
         </div>
         <div class="ui-grid-col-12">
           <div class="ui-grid-row">
@@ -18,20 +18,22 @@
           <div class="ui-grid-row">
             <span class="artilce_label ui-grid-col-2 ">Edit Url</span>
             <div class="artilce_input ui-grid-col-10 ">
-              <input id="in" type="text" size="30" pInputText [(ngModel)]="article.url" name="editurl" #url/>
+              <input id="in" type="text" size="30" pInputText [(ngModel)]="article.url" name="url" #url/>
             </div>
           </div>
           <div class="ui-grid-row">
             <span class="artilce_label ui-grid-col-2 ">Summary</span>
             <div class="artilce_input ui-grid-col-10 ">
-              <input id="in" type="text" size="30" pInputText [(ngModel)]="article.summary" name="details" #details />
+              <input id="in" type="text" size="30" pInputText [(ngModel)]="article.summary" name="summary" #summary />
             </div>
           </div>
           <div class="ui-grid-row">
-            <!--<app-editor></app-editor>-->
             <div class="ui-grid-col-12">
-             <app-ckedit> </app-ckedit>
-           </div>
+              <ckeditor [(ngModel)]="article.description"  name="description" #description debounce="500">
+                <p>Hello <strong>world</strong></p>
+              </ckeditor>
+              <div [innerHTML]="article.description"></div>
+            </div>
 
           </div>
         </div>
@@ -39,15 +41,18 @@
     </div>
   </div>
 
-<p-dialog header="Aritcle Preview" [(visible)]="display" modal="modal" width="300" responsive="true">
-  <h1>{{article.title}}</h1>
-  <a href="atricle.url"  ><h2 style="color:cornflowerblue">{{article.url}}</h2></a>
-  <div [innerHTML]="content" > </div>
-    <p>{{article.summary}}</p>
-        <p-footer>
-            <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-                <button type="button" pButton icon="fa-check" (click)="display=false" label="Done"></button>
+  <p-dialog header="Aritcle Preview" [(visible)]="display" modal="modal" width="300" responsive="true">
+    <h1>{{article.title}}</h1>
+    <a href="atricle.url">
+      <h2 style="color:cornflowerblue">{{article.url}}</h2>
+    </a>
+      <p>{{article.summary}}</p>
+    <div [innerHTML]="article.description"> </div>
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <button type="button" pButton icon="fa-check" (click)="display=false" label="Done"></button>
 
-            </div>
-        </p-footer>
-</p-dialog>
+      </div>
+    </p-footer>
+  </p-dialog>
+  

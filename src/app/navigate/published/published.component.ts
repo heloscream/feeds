@@ -1,23 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import {PublishedService } from '../published/published.service';
-import { Article} from './article'; 
+import {ArticleService } from '../../article/article.service';
+import { Article} from '../../article/article'; 
 
 @Component({
   selector: 'app-published',
   templateUrl: './published.component.html',
   styleUrls: ['./published.component.css'],
-  providers:[PublishedService]
+  providers:[ArticleService]
 })
 export class PublishedComponent implements OnInit {
   articles:Article[];
-  errorMessage: string;
+  errorMgs: string;
 
-  constructor(private publishedservice:PublishedService) { }
+
+  constructor(private publishedservice:ArticleService) { }
 
 
   ngOnInit() {
-  this.publishedservice.get()
-                   .subscribe(articles => this.articles = articles);
+  this.publishedservice.getArticle()
+                   .subscribe( articles => this.articles = articles,);
+                    error =>  this.errorMgs = <any>error
                   
   }
 

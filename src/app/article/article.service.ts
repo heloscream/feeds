@@ -18,17 +18,16 @@ export class ArticleService{
                        .catch(this.handleError);
     }
   //create article
-    create_article(name:string, url:string,description:string,content:string): Observable<Article>{
+    create_article(title:string, url:string,summary:string,description:string): Observable<Article>{
      let headers = new Headers({ 'Content-Type': 'application/json' });
      let options = new RequestOptions({ headers: headers });
 
-     return this.http.post(this.baseUrl,{name,url,description,content},options)
+     return this.http.post(this.baseUrl,{title,url,summary,description},options)
                             .map(this.extractData)
                             .catch(this.handleError);
     }
-  //  end created article
-
-
+    
+  // end created article
    private extractData(res: Response) {
      let body = res.json();
      return body || { };
