@@ -22,7 +22,6 @@ import { AnalysisComponent } from './navigate/analysis/analysis.component';
 import { VersionComponent } from './navigate/version/version.component';
 import { SocialComponent } from './navigate/social/social.component';
 import { SeoComponent } from './navigate/seo/seo.component';
-import { CkeditComponent } from './ckedit/ckedit.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import {PublishedComponent} from './navigate/published/published.component'
 
@@ -37,7 +36,6 @@ import {PublishedComponent} from './navigate/published/published.component'
     VersionComponent,
     SocialComponent,
     SeoComponent,
-    CkeditComponent,
     PublishedComponent
   ],
   imports: [
