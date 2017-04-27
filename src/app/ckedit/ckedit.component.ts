@@ -15,13 +15,13 @@ export class CkeditComponent implements OnInit {
    }
 
   ngOnInit() {
-    
-  }
-
-  onChange(content){
-    this.articleservice.getdata(content)
 
   }
+
+  // onChange(content){
+  //   this.articleservice.getdata(content)
+  //
+  // }
 
   // onChange(data){
   //   this.ArticleComponent.get(data);

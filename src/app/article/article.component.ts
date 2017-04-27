@@ -1,71 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms' ;
-import { Article} from './article';
-import {DialogModule} from 'primeng/primeng';
-import { ArticleService } from './article.service';
-import { ResponseHash } from './response.hash';
-import { Router} from '@angular/router';
 import { NgForm } from '@angular/forms';
+import {DialogModule} from 'primeng/primeng';
 
-
-
+import { Article} from './article';
+import { ArticleService } from './article.service';
 
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.css']
+  styleUrls: ['./article.component.css'],
+  providers:[ArticleService]
 })
-export class ArticleComponent  {
-  article :any;
-  content : string;
-  display: boolean =false;
+export class ArticleComponent implements OnInit {
+  errorMgs :string;
+  articles: Article[];
 
-  constructor(){
-    console.log(this.article)
-// =======
-//   constructor(private article_service: ArticleService,private router: Router){}
-//     private response: ResponseHash;
-//     private  article_status: string; 
-//     public   description:string;
+  // display: boolean =false;
+  constructor(private articleservice :ArticleService ){}
+     ngOnInit() { this.getArticle(); }
 
-//     create_article(articleform: NgForm)  {        
-//         this.article_service.create_article({article: Object.assign(articleform.value,{status: this.article_status})}).subscribe(response => {
-//             this.response=response;
-//             if(response.status==200){
-//                 this.router.navigate(['article-list',"article-creation"]);
-//             }
-//     });        
-//   }
+      getArticle(){
+         this.articleservice.getArticle().subscribe(
+            articles => this.articles = articles,
+            );
+            error =>  this.errorMgs = <any>error
+      }
 
-//   get(data){
-//     this.description = data;
-//   }
+  // showDialog(){
+  //   this.display = true;
+  // }
 
-//   onSubmit(data){ 
-//       console.log(data);       
-//         this.article_service.create_article({article: Object.assign(data,this.description,{status: this.article_status})}).subscribe(response => {
-//             this.response=response;
-//             if(response.status==200){
-//                 this.router.navigate(['article-list',"article-creation"]);
-//             }
-//     });        
-// >>>>>>> 92cc4636ee5b777a7e8c72c085eafdcade84a5c0
+  // onSubmit(title:string, url:string, description:string, content:string){
+  //   console.log("This   s"+title);
+  // }
+  addArticle(title:string, url:string, description:string, content:string){
+    if(!title){return;}
+    this.articleservice.create_article(title,url,description,content).subscribe(
+       article=> this.articles.push(article),
+      error => this.errorMgs = <any>error
+     );
+
   }
 
-getdata(data){
-  // console.log(data)
-  this.content=data;
-}
-
-showDialog(){
-  this.display = true;
-}
-
-
-
-
-onSubmit(data){
-  console.log(data)
-}
 }

@@ -15,5 +15,7 @@
   border-left: 1px solid silver;
   border-right: 1px solid silver;
 }
-
-
+.right_feeds{
+  margin-top: -12px;
+  margin-right: 20px;
+}
