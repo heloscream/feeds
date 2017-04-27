@@ -5,6 +5,7 @@ import {DialogModule} from 'primeng/primeng';
 
 import { Article} from './article';
 import { ArticleService } from './article.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class ArticleComponent implements OnInit {
   articles: Article[];
   display: boolean =false;
   
-  constructor(private articleservice :ArticleService ){}
+  constructor(private articleservice :ArticleService ,private router: Router){}
      ngOnInit() { this.getArticle(); }
 
       getArticle(){
@@ -32,13 +33,16 @@ export class ArticleComponent implements OnInit {
     this.display = true;
   }
 
-  ngSubmit(title:string, url:string, summary:string, description:string){
+  ngSubmit(title:string, url:string, summary:string, description:string,published:boolean){
     if(!title){return;}
-    this.articleservice.create_article(title,url,summary,description).subscribe(
+    this.articleservice.create_article(title,url,summary,JSON.stringify(description), published).subscribe(
        article=> this.articles.push(article),
-      error => this.errorMgs = <any>error
+      error => this.errorMgs = <any>error,
      );
-
+     if(!this.errorMgs){
+     this.getArticle()
+     this.router.navigate(['/published']);
+     }
   }
 
 }

@@ -1,16 +1,16 @@
 <div class="side_nav">
     <ul class="nav nav-pills nav-stacked">
        <li><a href="#">Setup</a></li>
-       <li class="active"><a routerLink="article">Create Article</a></li>
-       <li><a routerLink="analyis">Analysis</a></li>
-       <li><a routerLink="version">Version</a></li>
-       <li><a routerLink="social">Social</a></li>
-       <li><a routerLink="seo">SEO</a></li>
-        <li><a routerLink="display-article">Article</a></li>
-       <li><a >Assets</a></li>
-       <li><a >Scraps</a></li>
-       <li><a>Notifications</a></li>
-       <li><a routerLink="published">Published</a></li>
+       <li class="active"><a routerLink="article" [routerLinkActive]="['active']">Create Article</a></li>
+       <li><a routerLink="analyis" [routerLinkActive]="['active']">Analysis</a></li>
+       <li><a routerLink="version" [routerLinkActive]="['active']">Version</a></li>
+       <li><a routerLink="social" [routerLinkActive]="['active']">Social</a></li>
+       <li><a routerLink="seo" [routerLinkActive]="['active']">SEO</a></li>
+        <li><a routerLink="display-article" [routerLinkActive]="['active']">Article</a></li>
+       <li><a [routerLinkActive]="['active']" >Assets</a></li>
+       <li><a [routerLinkActive]="['active']">Scraps</a></li>
+       <li><a [routerLinkActive]="['active']">Notifications</a></li>
+       <li><a routerLink="published" [routerLinkActive]="['active']">Published</a></li>
 
      </ul>
 </div>
