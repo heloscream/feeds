@@ -2,16 +2,13 @@ import { Injectable, Component, OnInit } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 
+
 @Injectable()
-
-
 export class LoginService {
     public email: string;
     public password: string;
     private url = "http://localhost:9090/profiles";
-  
     data: any;
-
     constructor(private http: Http) { }
     getUsers() {
         return new Promise(resolve => {
