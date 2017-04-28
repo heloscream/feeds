@@ -1,0 +1,16 @@
+{
+    "profiles": [
+        {
+            "id": 1,
+            "user_name": "admin1",
+            "email": "admin1@admin.com",
+            "password": "1234"
+        },
+        {
+            "id": 2,
+            "user_name": "admin2",
+            "email": "admin2@admin.com",
+            "password": "1234"
+        }
+    ]
+}

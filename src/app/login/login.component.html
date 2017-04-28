@@ -1,0 +1,22 @@
+<p-growl [value]="msgs" sticky="sticky"></p-growl>
+<router-outlet></router-outlet>
+<div class="form_bg row-fluid">
+    <form #formCtrl="ngForm">
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="Email address" name="email" pInputText class="form-control validate fa fa-envelope" id="email"
+                [(ngModel)]="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #mail="ngModel" required/>
+            <span *ngIf="mail.errors?.pattern">Please enter a valid email</span>
+
+            <br>
+            <label>Password</label>
+            <input type="password" pInputText name="Password" [(ngModel)]="password" id="password" class="form-control validate fa fa-key"
+                name="passowrd" placeholder="Password" #pwd="ngModel" required/>
+
+            <br>
+            <br>    
+            <button pButton type="submit" class="ui-button-success btn-block" (click)="login()" label="login" [disabled]="!formCtrl.form.valid"></button>
+            <a class="message" href="">Forgot password?</a>
+        </div>
+    </form>
+</div>
