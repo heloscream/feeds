@@ -19,9 +19,13 @@ export class PublishedComponent implements OnInit {
   ngOnInit() {
   this.publishedservice.getArticle()
                    .subscribe( articles => this.articles = articles,);
+                  
                     error =>  this.errorMgs = <any>error
+
+                    //  console.log(this.articles)
                   
   }
+  
 
   
 
