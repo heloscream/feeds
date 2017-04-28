@@ -7,7 +7,6 @@ import { Router,ActivatedRoute} from '@angular/router';
 })
 export class LeftNavComponent implements OnInit {
   constructor(router:ActivatedRoute ) {
-   console.log(router.routeConfig);
   }
 
   ngOnInit() {

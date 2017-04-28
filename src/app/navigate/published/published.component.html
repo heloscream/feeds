@@ -1,3 +1,6 @@
+<input  pInputText name="Password" [(ngModel)]="search"  class="form-control validate fa fa-key"
+name="search" placeholder="search" #pwd="ngModel" (change)="searcharticles(search)"/>    
+
 <div style="margin:2%">
 
     <p-dataGrid [value]="articles" class="publishedgrid">
